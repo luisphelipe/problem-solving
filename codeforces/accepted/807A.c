@@ -5,23 +5,21 @@ int main()
     int n, min, before, after, result = 1;
     scanf("%d", &n);
 
-    scanf("%d %d", &before, &after);
-    if (before != after)
-        result = 2;
 
-    min = before;
-
-
-    for(int i = 1; i < n; i++){
+    for(int i = 0; i < n; i++){
         scanf("%d %d", &before, &after);
         if (before != after){
             result = 2;
             break;
         }
+	if (i == 0)
+	    min = before;
+
         if (before > min)
             result = 0;
-
-        min = before;
+	
+	if (before < min)
+	    min = before;
     }
 
     if (result == 2)
