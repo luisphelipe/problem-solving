@@ -1,4 +1,4 @@
 # Competitive Programming
 
-My most recent solutions to Codeforces problemset.
+My most recent submissions to Codeforces problemset.
 
