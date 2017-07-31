@@ -8,6 +8,7 @@ def main():
     for value in set(data):
         count = data.count(value)
         trig = False
+        
         for i in range(n):
             if data[i] == value:
                 trig = True

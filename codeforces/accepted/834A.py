@@ -9,9 +9,9 @@ def main():
     if not (time%2):
         print("undefined")
     elif (clock[(clock.index(start) + time)%4] == end):
-        print("CW")
+        print("cw")
     else:
-        print("CCW")
+        print("ccw")
 
 
 if __name__ == "__main__": main()
