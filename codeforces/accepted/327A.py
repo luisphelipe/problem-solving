@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def main():
     n = int(input())
     data = [int(i) for i in input().split()]
@@ -14,12 +15,11 @@ def main():
         for e in range(s, n):
             atual += flip[data[e]]
 
-            if atual + sum(data[e+1:])  > maxi:
+            if atual + sum(data[e+1:]) > maxi:
                 maxi = atual + sum(data[e+1:])
                 change = True
-    
+
     print(maxi if change else maxi-1)
 
 
 if __name__ == "__main__": main()
-
