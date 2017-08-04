@@ -1,5 +1,16 @@
 #include <stdio.h>
 
+
+long long int faclol(int val){
+    int i;
+    long long int res = 0;
+    for(i = 1; i < val; i++)
+	res += i;
+
+    return res;
+}
+
+
 int main()
 {
     int n, min, max, qnt_min = 1, qnt_max = 1, atual;
@@ -27,9 +38,8 @@ int main()
         else if (atual == max)
             qnt_max++;
     }
-
-    //identificar o padrão desse numero de combinações diferentes;
-    printf("%d %I64d", max - min,(long long int) qnt_min*qnt_max);
-
+    
+    if (min == max) printf("%d %I64d", max - min, faclol(qnt_min));
+    else printf("%d %I64d", max - min, (long long int) qnt_min*qnt_max);
     return 0;
 }
