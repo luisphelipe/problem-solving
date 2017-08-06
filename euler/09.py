@@ -14,13 +14,13 @@ def genc(a, b):
  
 
 def main():
-    a, b = 0, 1000
+    a, b = 600, 400
     pit = genc(a, b)
 
-    while a < b  and not pit:
+    while a > b/2 and not pit:
         pit = genc(a, b)
-        a += 1
-        b -= 1
+        a -= 1
+        b += 1
 
 
 if __name__ == "__main__": main()
