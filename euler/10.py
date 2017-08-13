@@ -13,8 +13,8 @@ def isPrime(val):
 def sievSum(val):
     data = list(range(val+1))
     data[1] = 0
-    for q in data[2:int(val**.5+1)]:
-        if q:
+    for q in range(2, int(val**.5+1)):
+        if data[q]:
             w = 2*q
             while w <= val:
                 data[w] = 0
