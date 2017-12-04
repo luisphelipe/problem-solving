@@ -6,7 +6,6 @@ using namespace std;
 typedef long long ll;
 
 
-
 int rnd(int *seed){
     int ret = *seed;
     *seed = (int) (((long long) (*seed) * 7 + 13) % 1000000007);
@@ -65,12 +64,10 @@ int main(){
 	else x = (rnd(&seed) % vmax) + 1;
 	if (op == 4) y = (rnd(&seed) % vmax) + 1;
 	
-	printf("%d %d %d %d %d\n", op, l, r, x, op == 4 ? y : -1);
+	//printf("%d %d %d %d %d\n", op, l, r, x, op == 4 ? y : -1);
 	if (op == 1) op1(arr, l, r, x);
 	if (op == 2) op2(arr, l, r, x);
 	if (op == 3) op3(arr, l, r, x);
 	if (op == 4) op4(arr, l, r, x, y);
 
     }
-
-}
