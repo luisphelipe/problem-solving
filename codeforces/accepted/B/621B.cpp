@@ -3,7 +3,7 @@ using namespace std;
 
 
 int main(){
-    int n, i, r, c, d, t = 0, arr[4000] = {0};
+    int n, i, r, c, t = 0, arr[4000] = {0};
     scanf("%d", &n);
     for (i = 0; i < n; i++) {
 	scanf("%d %d", &r, &c);
