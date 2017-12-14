@@ -1,0 +1,5 @@
+a, b = input(), input()
+sa, sb = len(a), len(b)
+if sa > sb: print(sa) 
+elif a != b: print(sb)
+else: print(-1)
