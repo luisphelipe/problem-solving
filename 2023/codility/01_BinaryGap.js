@@ -5,24 +5,28 @@ const { expect } = require("./_utils");
  *
  */
 
-const run_tests = () => {
-  expect(easySolution, 9).toEqual(2);
-  expect(easySolution, 529).toEqual(4);
-  expect(easySolution, 20).toEqual(1);
-  expect(easySolution, 15).toEqual(0);
-  expect(easySolution, 32).toEqual(0);
-  expect(easySolution, 1041).toEqual(5);
+/**
+ * here is an alternative algorithm that uses remainder: https://www.cuemath.com/numbers/decimal-to-binary/
+ */
 
-  expect(mediumSolution, 9).toEqual(2);
-  expect(mediumSolution, 529).toEqual(4);
-  expect(mediumSolution, 20).toEqual(1);
-  expect(mediumSolution, 15).toEqual(0);
-  expect(mediumSolution, 32).toEqual(0);
-  expect(mediumSolution, 1041).toEqual(5);
+const run_tests = () => {
+  expect(javascriptSolution, 9).toEqual(2);
+  expect(javascriptSolution, 529).toEqual(4);
+  expect(javascriptSolution, 20).toEqual(1);
+  expect(javascriptSolution, 15).toEqual(0);
+  expect(javascriptSolution, 32).toEqual(0);
+  expect(javascriptSolution, 1041).toEqual(5);
+
+  expect(mathSolution, 9).toEqual(2);
+  expect(mathSolution, 529).toEqual(4);
+  expect(mathSolution, 20).toEqual(1);
+  expect(mathSolution, 15).toEqual(0);
+  expect(mathSolution, 32).toEqual(0);
+  expect(mathSolution, 1041).toEqual(5);
 };
 
 // solution using javascript built-ins
-const easySolution = (N, debug = []) => {
+const javascriptSolution = (N, debug = []) => {
   // 1. transform the number to binary
   const binary = N.toString(2);
 
@@ -47,14 +51,15 @@ const easySolution = (N, debug = []) => {
 };
 
 // solution using math
-const mediumSolution = (N, debug = []) => {
+const mathSolution = (N, debug = []) => {
   let binary = "";
   let longest = 0;
   let started = false;
   let current = 0;
 
+  // the first possible exponent is 32 (bit size of int), given the problem description
   // > "N is an integer within the range [1..2,147,483,647]."
-  // unsigned int => 4 byte => max 32 length string
+  // POSSIBLE OPTIMIZATION: calculate the first exponent by calculating the base2 log of N
   for (let i = 32; i >= 0; i--) {
     const power_of_two = Math.pow(2, i);
 
@@ -87,4 +92,4 @@ const mediumSolution = (N, debug = []) => {
 
 run_tests();
 
-const solution = mediumSolution;
+const solution = mathSolution;
